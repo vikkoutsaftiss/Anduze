@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'idée est assez — Vakantiehuis in Anduze, Poort van de Cévennes</title>
+<meta name="description" content="Vakantiehuis in Anduze, Zuid-Frankrijk. Aan de voet van de Cévennen, bij de rivier de Gardon. Bekijk beschikbaarheid en stuur een aanvraag.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   Palet: zand van de Gardon-oevers (beige, dominant),
+   water van de rivier (lichtblauw), garrigue-begroeiing (groen).
+   Volgorde in gewicht: beige > blauw > groen.
+   =========================================================== */
+:root{
+  --beige:      #F5EDDC;  /* hoofd-achtergrond */
+  --beige-deep: #E7D3A6;  /* kaarten, geaccentueerde vlakken */
+  --beige-line: #D9C58F;
+  --blue:       #A9CBD9;  /* lichtblauw, rivier de Gardon */
+  --blue-deep:  #5D8FA6;  /* links, iconen, cta-rand */
+  --blue-ink:   #37606F;
+  --green:      #8CA179;  /* garrigue-groen */
+  --green-deep: #4F5F3E;  /* donker groen: footer, tekst-accent */
+  --ink:        #322C22;  /* warm zwartbruin */
+  --ink-soft:   #625843;
+  --max: 1080px;
+  --radius: 16px;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *, *::before, *::after{ animation:none !important; transition:none !important; }
+}
+
+body{
+  font-family:'Karla', sans-serif;
+  background:var(--beige);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:17px;
+}
+h1,h2,h3,.display{ font-family:'Fraunces', serif; font-weight:500; line-height:1.14; }
+a{ color:inherit; }
+img{ max-width:100%; display:block; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+.eyebrow{
+  font-size:12px; letter-spacing:.2em; text-transform:uppercase;
+  font-weight:700; color:var(--blue-deep);
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(245,237,220,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--beige-line);
+}
+nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:66px; }
+.brand{ font-family:'Fraunces', serif; font-size:20px; color:var(--ink); }
+.brand span{ color:var(--blue-deep); }
+nav ul{ display:flex; gap:30px; list-style:none; }
+nav ul a{
+  text-decoration:none; font-size:14px; font-weight:500; letter-spacing:.03em;
+  color:var(--ink-soft); transition:color .15s;
+}
+nav ul a:hover, nav ul a:focus-visible{ color:var(--ink); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--blue-deep); outline-offset:3px;
+}
+.nav-cta{
+  background:var(--green); color:#fff !important;
+  padding:9px 18px; border-radius:999px; font-weight:700;
+}
+.nav-cta:hover{ background:var(--green-deep); }
+@media (max-width:740px){ nav ul li:not(:last-child){ display:none; } }
+
+/* ---------- hero ---------- */
+header.hero{ position:relative; overflow:hidden; }
+.hero .wrap{
+  min-height:74vh;
+  display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center;
+  padding-top:64px; padding-bottom:70px;
+}
+@media (max-width:880px){ .hero .wrap{ grid-template-columns:1fr; padding-top:40px; } }
+
+.hero h1{
+  font-size:clamp(38px, 5.4vw, 62px);
+  max-width:14ch; color:var(--ink);
+}
+.hero h1 em{ font-style:normal; color:var(--blue-deep); }
+.hero p.lead{ max-width:50ch; font-size:18px; color:var(--ink-soft); margin-top:18px; }
+.hero-actions{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
+.btn{
+  display:inline-block; text-decoration:none; font-weight:700; font-size:15px;
+  padding:14px 26px; border-radius:999px; letter-spacing:.02em;
+  transition:transform .15s ease, background .15s, color .15s;
+  border:1.5px solid transparent;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn-primary{ background:var(--green); color:#fff; }
+.btn-primary:hover{ background:var(--green-deep); }
+.btn-outline{ border-color:var(--blue-deep); color:var(--blue-deep); }
+.btn-outline:hover{ background:var(--blue); border-color:var(--blue); color:var(--ink); }
+
+/* signatuur: een handgetekend weekstrookje, echo van de kalendersectie */
+.hero-card{
+  background:#fff; border:1px solid var(--beige-line); border-radius:var(--radius);
+  padding:26px; box-shadow:0 18px 40px -18px rgba(50,44,34,.28);
+}
+.hero-card .maand{ font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:14px; }
+.weekstrook{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
+.weekstrook span{
+  aspect-ratio:1; border-radius:7px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700; color:#fff;
+}
+.d-vrij{ background:var(--green); }
+.d-bezet{ background:var(--beige-deep); color:var(--ink-soft); }
+.d-select{ background:var(--blue-deep); }
+.hero-card .legenda{ display:flex; gap:16px; margin-top:16px; font-size:12.5px; color:var(--ink-soft); flex-wrap:wrap; }
+.legenda i{ display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+
+/* ---------- secties ---------- */
+section{ padding:84px 0; }
+.section-head{ max-width:60ch; margin-bottom:44px; }
+.section-head h2{ font-size:clamp(28px, 3.6vw, 42px); margin-top:12px; color:var(--ink); }
+.section-head p{ margin-top:14px; color:var(--ink-soft); }
+
+/* kenmerken */
+.kenmerken{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media (max-width:860px){ .kenmerken{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .kenmerken{ grid-template-columns:1fr; } }
+.kaart{
+  background:#fff; border-radius:var(--radius); padding:26px 24px;
+  border:1px solid var(--beige-line);
+}
+.kaart h3{ font-size:19px; margin-bottom:8px; color:var(--ink); }
+.kaart p{ font-size:15px; color:var(--ink-soft); }
+.kaart .glyph{
+  width:40px; height:40px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-family:'Fraunces', serif; font-size:19px; margin-bottom:14px;
+}
+.kaart:nth-child(6n+1) .glyph{ background:var(--green); }
+.kaart:nth-child(6n+2) .glyph{ background:var(--blue-deep); }
+.kaart:nth-child(6n+3) .glyph{ background:var(--ink-soft); }
+.kaart:nth-child(6n+4) .glyph{ background:var(--blue-deep); }
+.kaart:nth-child(6n+5) .glyph{ background:var(--green); }
+.kaart:nth-child(6n+6) .glyph{ background:var(--green-deep); }
+
+/* ---------- virtuele tour ---------- */
+.tour-grid{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
+@media (max-width:880px){ .tour-grid{ grid-template-columns:1fr; } }
+.tour-embed{
+  position:relative; border-radius:var(--radius); overflow:hidden;
+  border:1px solid var(--beige-line); background:var(--ink);
+  aspect-ratio:16/10;
+}
+.tour-embed iframe{ width:100%; height:100%; border:0; display:block; }
+.tour-tekst h3{ font-size:22px; margin-bottom:10px; }
+.tour-tekst p{ color:var(--ink-soft); margin-bottom:20px; }
+
+/* ---------- beschikbaarheid ---------- */
+.beschikbaar{ background:var(--beige-deep); }
+.besch-grid{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
+@media (max-width:880px){ .besch-grid{ grid-template-columns:1fr; } }
+.kalender-embed{
+  background:#fff; border-radius:var(--radius); border:1px solid var(--beige-line);
+  overflow:hidden;
+}
+.kalender-embed .titelbalk{
+  padding:16px 20px; border-bottom:1px solid var(--beige-line);
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:13px; font-weight:700; color:var(--ink-soft); letter-spacing:.04em; text-transform:uppercase;
+}
+.kalender-embed iframe{ width:100%; height:420px; border:0; display:block; }
+.legenda-groot{ display:flex; gap:22px; padding:16px 20px; flex-wrap:wrap; font-size:14px; color:var(--ink-soft); }
+
+.besch-tekst ul{ list-style:none; margin-top:18px; }
+.besch-tekst li{
+  padding-left:26px; position:relative; margin-bottom:14px; color:var(--ink-soft); font-size:15.5px;
+}
+.besch-tekst li::before{
+  content:"→"; position:absolute; left:0; color:var(--blue-deep); font-weight:700;
+}
+
+/* ---------- regio ---------- */
+.regio{ background:var(--green-deep); color:var(--beige); }
+.regio .eyebrow{ color:var(--blue); }
+.regio .section-head p{ color:rgba(245,237,220,.8); }
+.lijn{ position:relative; margin-top:8px; }
+.lijn::before{
+  content:""; position:absolute; left:11px; top:6px; bottom:6px; width:2px;
+  background:repeating-linear-gradient(to bottom, var(--blue) 0 10px, transparent 10px 18px);
+}
+.halte{ position:relative; padding:0 0 42px 56px; }
+.halte:last-child{ padding-bottom:0; }
+.halte::before{
+  content:""; position:absolute; left:0; top:4px; width:24px; height:24px; border-radius:50%;
+  background:var(--blue); border:5px solid var(--green-deep); box-shadow:0 0 0 2px var(--blue);
+}
+.halte .afstand{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--blue); font-weight:700; }
+.halte h3{ font-size:22px; margin:6px 0 8px; color:#fff; }
+.halte p{ max-width:62ch; color:rgba(245,237,220,.85); font-size:15.5px; }
+
+/* ---------- seizoenen ---------- */
+.seizoenen{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media (max-width:860px){ .seizoenen{ grid-template-columns:1fr 1fr; } }
+@media (max-width:520px){ .seizoenen{ grid-template-columns:1fr; } }
+.seizoen{ border-radius:var(--radius); padding:24px 22px; background:#fff; border:1px solid var(--beige-line); }
+.seizoen h3{ color:var(--ink); font-size:18px; margin-bottom:6px; }
+.seizoen p{ font-size:14.5px; color:var(--ink-soft); }
+.seizoen .maand{ font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--blue-deep); font-weight:700; }
+
+/* ---------- praktisch ---------- */
+.praktisch-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:start; }
+@media (max-width:820px){ .praktisch-grid{ grid-template-columns:1fr; } }
+.afstanden{ list-style:none; }
+.afstanden li{
+  display:flex; justify-content:space-between; gap:16px; padding:13px 0;
+  border-bottom:1px dashed var(--beige-line); font-size:15.5px;
+}
+.afstanden li span:last-child{ font-weight:700; color:var(--blue-ink); white-space:nowrap; }
+
+/* ---------- contact ---------- */
+.contact{ background:#fff; }
+.contact-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:52px; align-items:start; }
+@media (max-width:880px){ .contact-grid{ grid-template-columns:1fr; } }
+.contact-info h2{ font-size:clamp(28px, 3.6vw, 40px); }
+.contact-info p{ color:var(--ink-soft); margin-top:14px; max-width:44ch; }
+.contact-info .direct{ margin-top:26px; font-size:15px; }
+.contact-info .direct a{ color:var(--blue-deep); font-weight:700; text-decoration:none; }
+.contact-info .direct a:hover{ text-decoration:underline; }
+
+form.aanvraag{
+  background:var(--beige); border:1px solid var(--beige-line); border-radius:var(--radius);
+  padding:32px; display:grid; gap:18px;
+}
+.veld{ display:grid; gap:6px; }
+.veld label{ font-size:13px; font-weight:700; color:var(--ink-soft); }
+.veld input, .veld textarea{
+  border:1.5px solid var(--beige-line); border-radius:10px; padding:12px 14px;
+  font-family:inherit; font-size:15px; background:#fff; color:var(--ink);
+}
+.veld input:focus, .veld textarea:focus{ border-color:var(--blue-deep); }
+.rij-twee{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media (max-width:520px){ .rij-twee{ grid-template-columns:1fr; } }
+.submit-btn{
+  justify-self:start; background:var(--green); color:#fff; border:none;
+  padding:14px 30px; border-radius:999px; font-weight:700; font-size:15px; cursor:pointer;
+  transition:background .15s, transform .15s;
+}
+.submit-btn:hover{ background:var(--green-deep); transform:translateY(-2px); }
+.form-note{ font-size:13px; color:var(--ink-soft); }
+
+/* ---------- footer ---------- */
+footer{ background:var(--green-deep); color:rgba(245,237,220,.78); padding:34px 0; font-size:14px; }
+footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+footer a{ color:var(--blue); text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">L'idée est <span>Assez</span></div>
+    <ul>
+      <li><a href="#huis">Het huis</a></li>
+      <li><a href="#tour">Virtuele tour</a></li>
+      <li><a href="#beschikbaarheid">Beschikbaarheid</a></li>
+      <li><a href="#regio">De regio</a></li>
+      <li><a href="#praktisch">Praktisch</a></li>
+      <li><a href="#contact" class="nav-cta">Stuur aanvraag</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Anduze · Gard · Zuid-Frankrijk</span>
+      <h1>Wakker worden waar de <em>Cévennen</em> beginnen</h1>
+      <p class="lead">L'idée est assez is een vakantiehuis voor zes personen gebouwd op de vestigingsmuren van Anduze — de stad die zichzelf met trots <strong>la Porte des Cévennes</strong> noemt, de poort van de Cévennen. Bekijk hieronder welke weken vrij zijn en stuur ons een bericht.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#beschikbaarheid">Bekijk beschikbaarheid</a>
+        <a class="btn btn-outline" href="#contact">Stuur een aanvraag</a>
+        <a class="btn btn-outline" href="#tour">Bekijk het huis</a>
+      </div>
+    </div>    
+  </div>
+</header>
+
+<section id="huis">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Het huis</span>
+      <h2>Een typisch Franse woning, twee minuten lopen van het bruisende centrum van Anduze</h2>
+      <p>Van buiten dikke natuurstenen muren die de zomerhitte buiten houden. De binnenkant is opgeknapt met behoud van oorspronkelijke onderdelen van het 300 jaar oude huis.</p>
+    </div>
+    <div class="kenmerken">
+      <div class="kaart"><div class="glyph">☼</div><h3>Dakterras</h3><p>Het dakterras met buitenkeuken waar je heerlijk kunt zitten en kunt genieten van het uitzicht over de stad en natuur.</p></div>
+      <div class="kaart"><div class="glyph">⌂</div><h3>Ruim &amp; koel binnen</h3><p>Drie slaapkamers, twee badkamers en een open leefkeuken. De stenen muren houden het huis ook in augustus aangenaam koel.</p></div>
+      <div class="kaart"><div class="glyph">✻</div><h3>Volledig uitgerust</h3><p>Wifi, wasmachine, airco in de slaapkamers en een buitenkeuken.</p></div>
+      <div class="kaart"><div class="glyph">➳</div><h3>Op loopafstand</h3><p>In twee minuten sta je aan de Gardon voor een ochtendduik en op het marktplein van Anduze.</p></div>
+      <div class="kaart"><div class="glyph">❦</div><h3>Vase d'Anduze</h3><p>.</p></div>
+      <div class="kaart"><div class="glyph">✓</div><h3>Voor jong en oud</h3><p>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tour" style="background:var(--beige);">
+  <div class="wrap tour-grid">
+    <div class="tour-embed">
+      <!--
+        Vervang de src hieronder door de embed-URL uit Kuula
+        (Share → Embed → kopieer de iframe src).
+        Voorbeeld: https://kuula.co/share/KUULA_TOUR_ID?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1
+      -->
+      <iframe
+        src="https://kuula.co/share/collection/7MzTW?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1"
+        allow="xr-spatial-tracking" allowfullscreen
+        title="360° virtuele tour L'idée est assez">
+      </iframe>
+    </div>
+    <div class="tour-tekst">
+      <span class="eyebrow">Tour du maison</span>
+      <h3>Loop het huis alvast rond</h3>
+      <p>Met de 360°-tour zie je elke kamer, het dakterras en ook het centrum van Anduze, alsof je er al bent. Sleep om rond te kijken of klik op de hotspots om door te lopen.</p>
+      <a class="btn btn-outline" href="het-huis.html">Bekijk de volledige tour &amp; alle foto's</a>
+    </div>
+  </div>
+</section>
+
+<section class="beschikbaar" id="beschikbaarheid">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Beschikbaarheid</span>
+      <h2>Actuele Beschikbaarheidskalender</h2>
+    </div>
+    <div class="besch-grid">
+      <div class="kalender-embed">
+        <div class="titelbalk">
+          <span>Beschikbaarheid L'idée est Assez</span>
+        </div>
+        <!--
+          Vervang de src hieronder door de "Embed code" van de gedeelde
+          Google Calendar (Instellingen → Beschikbaarheid delen → Insluiten).
+          Zet de agenda op "openbaar beschikbaar maken" met alleen
+          vrij/bezet-tijden zichtbaar, geen details.
+        -->
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=535e9de0c3f6be5e50becedbd286ce4c2ef64c0ff812c5f3169bb4866868ff73%40group.calendar.google.com&ctz=Europe%2FParis&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH"
+          title="Beschikbaarheidskalender L'idée est assez">
+        </iframe>
+        <div class="legenda-groot">
+          <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--green);margin-right:6px;"></i>Vrij</span>
+          <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--beige-deep);margin-right:6px;"></i>Bezet</span>
+        </div>
+      </div>
+      <div class="besch-tekst">
+        <h3 style="font-size:22px; margin-bottom:6px;">Zo werkt een aanvraag</h3>
+        <ul>
+          <li>Bekijk in de kalender welke week(en) vrij staan.</li>
+          <li>Stuur via het contactformulier je gewenste aankomst- en vertrekdatum door.</li>
+          <li>Je krijgt zo spoedig als mogelijk een reactie met prijs en beschikbaarheid.</li>
+          <li>Na akkoord ontvang je verdere instructies voor de aanbetaling.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="regio" id="regio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">De regio · langs de lijn van het stoomtreintje</span>
+      <h2>Anduze verkennen, halte voor halte</h2>
+      <p>De beroemde <strong>Train à Vapeur des Cévennes</strong> vertrekt op een paar minuten van het huis en puft door het Gardon-dal naar Saint-Jean-du-Gard. Wij gebruiken zijn route als leidraad — met een paar zijsprongen die je niet mag missen.</p>
+    </div>
+    <div class="lijn">
+      <div class="halte">
+        <span class="afstand">Startpunt · 10 min. lopen</span>
+        <h3>Anduze zelf</h3>
+        <p>Smalle middeleeuwse steegjes, de markante klokkentoren en ateliers vol geglazuurd aardewerk. Kom op <strong>donderdagochtend</strong> voor de weekmarkt: pélardon-geitenkaas, olijven en honing uit de Cévennen.</p>
+      </div>
+      <div class="halte">
+        <span class="afstand">Eerste halte · 2 km</span>
+        <h3>La Bambouseraie en Cévennes</h3>
+        <p>Het grootste bamboebos van Europa, aangelegd in 1856: een onwerkelijk groen labyrint met bamboestengels van twintig meter hoog en een Japanse tuin. Het stoomtreintje stopt er letterlijk voor de deur.</p>
+      </div>
+      <div class="halte">
+        <span class="afstand">Eindhalte · 13 km sporen</span>
+        <h3>Saint-Jean-du-Gard</h3>
+        <p>Eindstation van de stoomtrein, in het hart van het oude zijde-land. Bezoek Maison Rouge en rijd terug langs de Corniche des Cévennes voor uitzichten tot aan de Mont Aigoual.</p>
+      </div>
+      <div class="halte">
+        <span class="afstand">Zijsprong · 11 km</span>
+        <h3>Grotte de Trabuc</h3>
+        <p>De grootste grot van de Cévennen, met duizenden kleine kalkformaties die niemand precies weet te verklaren. Heerlijk koel op een hete dag: binnen is het altijd 14 graden.</p>
+      </div>
+      <div class="halte">
+        <span class="afstand">Zijsprong · aan je voeten</span>
+        <h3>De Gardon</h3>
+        <p>Zwemmen, kanoën of gewoon met je voeten in het water. Stroomafwaarts wacht de Pont du Gard (45 min. rijden), het best bewaarde Romeinse aquaduct ter wereld.</p>
+      </div>
+      <div class="halte">
+        <span class="afstand">Verder weg · 30–60 min.</span>
+        <h3>Nîmes, Uzès &amp; het Nationaal Park Cévennes</h3>
+        <p>Romeins Nîmes met zijn arena, het hertogelijke Uzès met misschien wel het mooiste marktplein van de Languedoc, en noordwaarts het UNESCO-landschap van het Parc national des Cévennes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="seizoenen">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Wanneer kom je?</span>
+      <h2>Elk seizoen zijn eigen Cévennen</h2>
+    </div>
+    <div class="seizoenen">
+      <div class="seizoen"><span class="maand">Apr – Jun</span><h3>Lente</h3><p>Bloeiende brem op de hellingen, ideale wandeltemperaturen en een groene, volle Gardon.</p></div>
+      <div class="seizoen"><span class="maand">Jul – Aug</span><h3>Zomer</h3><p>Lange dagen op het dakterras en in de rivier, avondmarkten, en eind augustus de pottenbakkersmarkt van Anduze.</p></div>
+      <div class="seizoen"><span class="maand">Sep – Okt</span><h3>Herfst</h3><p>Kastanjeseizoen — dé vrucht van de Cévennen. Wijngaarden kleuren goud en de Gardon is nog wekenlang zwembaar.</p></div>
+      <div class="seizoen"><span class="maand">Nov – Mrt</span><h3>Winter</h3><p>Stille steegjes, haardvuur, truffelmarkten in de omgeving en heldere winterzon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="praktisch" style="background:var(--beige-deep);">
+  <div class="wrap">
+    <div class="praktisch-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:28px;">
+          <span class="eyebrow">Praktisch</span>
+          <h2>Goed bereikbaar, heerlijk afgelegen</h2>
+          <p>Anduze ligt op zo'n 1.150 km van Utrecht — één lange rijdag of een ontspannen reis met een tussenstop. Vliegen kan ook: Nîmes en Montpellier liggen om de hoek.</p>
+        </div>
+      </div>
+      <div>
+        <ul class="afstanden">
+          <li><span>Bakker &amp; supermarkt (Anduze)</span><span>10 min. lopen</span></li>
+          <li><span>Rivier de Gardon</span><span>2 min. lopen</span></li>
+          <li><span>Bambouseraie</span><span>5 min. rijden</span></li>
+          <li><span>Nîmes (TGV &amp; luchthaven)</span><span>45 min.</span></li>
+          <li><span>Montpellier (luchthaven)</span><span>1 u 10</span></li>
+          <li><span>Pont du Gard</span><span>45 min.</span></li>
+          <li><span>Middellandse Zee (Le Grau-du-Roi)</span><span>1 u 15</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow">Aanvraag</span>
+      <h2>Stuur ons je gewenste week</h2>
+      <div class="direct">
+        Liever direct mailen?<br>
+        <a href="mailto:info@vakantiewoninganduze.com">info@vakantiewoninganduze.com</a>
+      </div>
+    </div>
+    <form class="aanvraag" action="mailto:info@vakantiewoninganduze.com" method="post" enctype="text/plain">
+      <div class="rij-twee">
+        <div class="veld">
+          <label for="naam">Naam</label>
+          <input id="naam" name="naam" type="text" required>
+        </div>
+        <div class="veld">
+          <label for="email">E-mailadres</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+      </div>
+      <div class="rij-twee">
+        <div class="veld">
+          <label for="aankomst">Gewenste aankomst</label>
+          <input id="aankomst" name="aankomst" type="date">
+        </div>
+        <div class="veld">
+          <label for="vertrek">Gewenst vertrek</label>
+          <input id="vertrek" name="vertrek" type="date">
+        </div>
+      </div>
+      <div class="veld">
+        <label for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" rows="4" placeholder="Met hoeveel personen komen jullie, en heb je nog vragen?"></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Verstuur aanvraag</button>
+      <p class="form-note">We reageren zo spoedig als mogelijk. Boeken gaat altijd via e-mail — er wordt niet online betaald op deze site.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 L'idée est Assez · Anduze, Gard, Frankrijk</div>
+    <div><a href="mailto:info@vakantiewoninganduze.com">info@vakantiewoninganduze.com</a> · <a href="#huis">Naar boven ↑</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
