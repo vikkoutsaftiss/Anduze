@@ -80,14 +80,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width:740px){ nav ul li:not(:last-child){ display:none; } }
 
 /* ---------- hero ---------- */
+/* ---------- hero ---------- */
 header.hero{ position:relative; overflow:hidden; }
 .hero .wrap{
-  min-height:74vh;
-  display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center;
+  min-height:auto;
   padding-top:64px; padding-bottom:70px;
 }
-@media (max-width:880px){ .hero .wrap{ grid-template-columns:1fr; padding-top:40px; } }
-
+@media (max-width:880px){ .hero .wrap{ padding-top:40px; } }
 .hero h1{
   font-size:clamp(38px, 5.4vw, 62px);
   max-width:14ch; color:var(--ink);
@@ -308,7 +307,7 @@ footer a:hover{ text-decoration:underline; }
       <div class="kaart"><div class="glyph">⌂</div><h3>Ruim &amp; koel binnen</h3><p>Drie slaapkamers, twee badkamers en een open leefkeuken. De stenen muren houden het huis ook in augustus aangenaam koel.</p></div>
       <div class="kaart"><div class="glyph">✻</div><h3>Volledig uitgerust</h3><p>Wifi, wasmachine, airco in de slaapkamers en een buitenkeuken.</p></div>
       <div class="kaart"><div class="glyph">➳</div><h3>Op loopafstand</h3><p>In twee minuten sta je aan de Gardon voor een ochtendduik en op het marktplein van Anduze.</p></div>
-      <div class="kaart"><div class="glyph">❦</div><h3>Vase d'Anduze</h3><p>.</p></div>
+      <div class="kaart"><div class="glyph">❦</div><h3>Indelingen</h3><p>De woning is op te delen in 2 delen voor 2 en 6 personen, of te huren als complete woning voor 8 personen.</p></div>
       <div class="kaart"><div class="glyph">✓</div><h3>Voor jong en oud</h3><p>.</p></div>
     </div>
   </div>
@@ -366,11 +365,12 @@ footer a:hover{ text-decoration:underline; }
       <div class="besch-tekst">
         <h3 style="font-size:22px; margin-bottom:6px;">Zo werkt een aanvraag</h3>
         <ul>
-          <li>Bekijk in de kalender welke week(en) vrij staan.</li>
+          <li>Bekijk in de kalender welke week(en) vrij zijn.</li>
           <li>Stuur via het contactformulier je gewenste aankomst- en vertrekdatum door.</li>
           <li>Je krijgt zo spoedig als mogelijk een reactie met prijs en beschikbaarheid.</li>
           <li>Na akkoord ontvang je verdere instructies voor de aanbetaling.</li>
         </ul>
+        <a href="#contact" class="nav-cta">Stuur aanvraag</a>
       </div>
     </div>
   </div>
@@ -440,7 +440,7 @@ footer a:hover{ text-decoration:underline; }
         <div class="section-head" style="margin-bottom:28px;">
           <span class="eyebrow">Praktisch</span>
           <h2>Goed bereikbaar, heerlijk afgelegen</h2>
-          <p>Anduze ligt op zo'n 1.150 km van Utrecht — één lange rijdag of een ontspannen reis met een tussenstop. Vliegen kan ook: Nîmes en Montpellier liggen om de hoek.</p>
+          <p>Anduze ligt op zo'n 1.150 km van Utrecht — één lange rijdag of een ontspannen reis met een tussenstop. Vliegen kan ook: de vliegvelden van Nîmes en Montpellier rij je in maximaal 70 minuten naartoe.</p>
         </div>
       </div>
       <div>
@@ -462,7 +462,8 @@ footer a:hover{ text-decoration:underline; }
   <div class="wrap contact-grid">
     <div class="contact-info">
       <span class="eyebrow">Aanvraag</span>
-      <h2>Stuur ons je gewenste week</h2>
+      <h2>Stuur ons je gewenste verblijf week</h2>
+      <p>Wij verhuren enkel per volledige week. Geef hiernaast aan welke week je graag zou willen komen.</p>
       <div class="direct">
         Liever direct mailen?<br>
         <a href="mailto:info@vakantiewoninganduze.com">info@vakantiewoninganduze.com</a>
