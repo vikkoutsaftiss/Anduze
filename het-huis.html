@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De woning — L'idée est assez, Anduze</title>
+<meta name="description" content="Bekijk de woning van L'idée est assez in Anduze: 360°-tour, de verschillende indelingen en alle foto's van het dakterras, de leefruimtes en de slaapkamers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --beige:      #F5EDDC;
+  --beige-deep: #E7D3A6;
+  --beige-line: #D9C58F;
+  --blue:       #A9CBD9;
+  --blue-deep:  #5D8FA6;
+  --blue-ink:   #37606F;
+  --green:      #8CA179;
+  --green-deep: #4F5F3E;
+  --ink:        #322C22;
+  --ink-soft:   #625843;
+  --max: 1080px;
+  --radius: 16px;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *, *::before, *::after{ animation:none !important; transition:none !important; }
+}
+body{ font-family:'Karla', sans-serif; background:var(--beige); color:var(--ink); line-height:1.65; font-size:17px; }
+h1,h2,h3{ font-family:'Fraunces', serif; font-weight:500; line-height:1.14; }
+a{ color:inherit; }
+img{ max-width:100%; display:block; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+.eyebrow{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--blue-deep); }
+
+/* ---------- nav ---------- */
+nav{ position:sticky; top:0; z-index:50; background:rgba(245,237,220,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--beige-line); }
+nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:66px; }
+.brand{ font-family:'Fraunces', serif; font-size:20px; color:var(--ink); text-decoration:none; }
+.brand span{ color:var(--blue-deep); }
+nav ul{ display:flex; gap:30px; list-style:none; }
+nav ul a{ text-decoration:none; font-size:14px; font-weight:500; letter-spacing:.03em; color:var(--ink-soft); transition:color .15s; }
+nav ul a:hover, nav ul a:focus-visible{ color:var(--ink); }
+a:focus-visible, button:focus-visible{ outline:2px solid var(--blue-deep); outline-offset:3px; }
+.nav-cta{ background:var(--green); color:#fff !important; padding:9px 18px; border-radius:999px; font-weight:700; }
+.nav-cta:hover{ background:var(--green-deep); }
+@media (max-width:740px){ nav ul li:not(:last-child){ display:none; } }
+
+.btn{ display:inline-block; text-decoration:none; font-weight:700; font-size:15px; padding:14px 26px; border-radius:999px; letter-spacing:.02em; transition:transform .15s ease, background .15s, color .15s; border:1.5px solid transparent; }
+.btn:hover{ transform:translateY(-2px); }
+.btn-primary{ background:var(--green); color:#fff; }
+.btn-primary:hover{ background:var(--green-deep); }
+.btn-outline{ border-color:var(--blue-deep); color:var(--blue-deep); }
+.btn-outline:hover{ background:var(--blue); border-color:var(--blue); color:var(--ink); }
+
+/* ---------- pagina-hero ---------- */
+.pagehero .wrap{ padding-top:56px; padding-bottom:36px; }
+.pagehero h1{ font-size:clamp(34px, 5vw, 54px); max-width:18ch; margin-top:14px; }
+.pagehero p{ max-width:56ch; color:var(--ink-soft); margin-top:16px; font-size:18px; }
+.snelnav{ display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+
+section{ padding:72px 0; }
+.section-head{ max-width:60ch; margin-bottom:40px; }
+.section-head h2{ font-size:clamp(28px, 3.6vw, 40px); margin-top:12px; }
+.section-head p{ margin-top:14px; color:var(--ink-soft); }
+
+/* ---------- tour ---------- */
+.tour-groot{ padding-top:20px; }
+.tour-embed-groot{
+  border-radius:var(--radius); overflow:hidden; border:1px solid var(--beige-line);
+  background:var(--ink); aspect-ratio:16/9; box-shadow:0 24px 50px -24px rgba(50,44,34,.35);
+}
+.tour-embed-groot iframe{ width:100%; height:100%; border:0; display:block; }
+.tour-caption{ margin-top:14px; font-size:14px; color:var(--ink-soft); text-align:center; }
+
+/* ---------- indelingen ---------- */
+.indelingen{ background:var(--beige-deep); }
+.indeling-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media (max-width:980px){ .indeling-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:520px){ .indeling-grid{ grid-template-columns:1fr; } }
+.indeling{ background:#fff; border:1px solid var(--beige-line); border-radius:var(--radius); padding:24px 22px; border-top-width:5px; }
+.indeling.groot{ border-top-color:#33B679; }
+.indeling.klein{ border-top-color:#F6BF26; }
+.indeling.motor{ border-top-color:#039BE5; }
+.indeling.volledig{ border-top-color:#D50000; }
+.indeling .label{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--blue-deep); margin-bottom:8px; }
+.indeling h3{ font-size:20px; margin-bottom:8px; }
+.indeling p{ color:var(--ink-soft); font-size:15px; }
+.indeling-note{ margin-top:22px; font-size:14px; color:var(--ink-soft); }
+
+/* ---------- galerij ---------- */
+.galerij-groep{ margin-bottom:56px; }
+.galerij-groep:last-child{ margin-bottom:0; }
+.galerij-groep h3{ font-size:24px; margin-bottom:6px; }
+.galerij-groep > p{ color:var(--ink-soft); margin-bottom:20px; max-width:60ch; font-size:15.5px; }
+.galerij{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media (max-width:760px){ .galerij{ grid-template-columns:1fr 1fr; } }
+@media (max-width:460px){ .galerij{ grid-template-columns:1fr; } }
+.galerij figure{
+  position:relative; border-radius:12px; overflow:hidden;
+  aspect-ratio:4/3; background:var(--beige-deep); border:1px solid var(--beige-line);
+}
+.galerij figure.breed{ grid-column:span 2; aspect-ratio:auto; }
+@media (max-width:460px){ .galerij figure.breed{ grid-column:auto; aspect-ratio:4/3; } }
+.galerij figure img{ width:100%; height:100%; object-fit:cover; cursor:zoom-in; transition:transform .35s ease; }
+.galerij figure:hover img{ transform:scale(1.03); }
+.galerij figcaption{
+  position:absolute; left:0; right:0; bottom:0; padding:22px 14px 10px;
+  font-size:13px; color:#fff; background:linear-gradient(transparent, rgba(50,44,34,.65));
+  pointer-events:none;
+}
+/* placeholder tot er een echte foto staat */
+.galerij figure.ph{ display:flex; align-items:center; justify-content:center; text-align:center; color:var(--ink-soft); font-size:14px; font-weight:500; padding:16px; }
+.galerij figure.ph-wrap{ flex-direction:column; }
+.galerij figure.ph::before{ content:"Foto volgt"; display:block; font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--blue-deep); margin-bottom:6px; }
+
+/* ---------- lightbox ---------- */
+.lightbox{ position:fixed; inset:0; z-index:100; background:rgba(30,26,20,.92); display:none; align-items:center; justify-content:center; padding:24px; }
+.lightbox.open{ display:flex; }
+.lightbox img{ max-width:100%; max-height:84vh; border-radius:10px; }
+.lightbox .cap{ position:absolute; bottom:22px; left:0; right:0; text-align:center; color:#fff; font-size:14px; }
+.lb-btn{ position:absolute; background:rgba(245,237,220,.14); color:#fff; border:none; width:46px; height:46px; border-radius:50%; font-size:22px; cursor:pointer; }
+.lb-btn:hover{ background:rgba(245,237,220,.3); }
+.lb-close{ top:18px; right:18px; }
+.lb-prev{ left:18px; top:50%; transform:translateY(-50%); }
+.lb-next{ right:18px; top:50%; transform:translateY(-50%); }
+
+/* ---------- terug-cta ---------- */
+.terug-cta{ background:var(--green-deep); color:var(--beige); text-align:center; }
+.terug-cta h2{ color:#fff; font-size:clamp(28px, 4vw, 40px); }
+.terug-cta p{ margin:14px auto 28px; max-width:48ch; color:rgba(245,237,220,.85); }
+.terug-cta .btn-primary{ background:var(--blue-deep); }
+.terug-cta .btn-primary:hover{ background:var(--blue-ink); }
+
+footer{ background:var(--green-deep); color:rgba(245,237,220,.78); padding:34px 0; font-size:14px; border-top:1px solid rgba(245,237,220,.12); }
+footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+footer a{ color:var(--blue); text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">L'idée est <span>Assez</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#indelingen">Indelingen</a></li>
+      <li><a href="#fotos">Foto's</a></li>
+      <li><a href="index.html#beschikbaarheid">Beschikbaarheid</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Stuur aanvraag</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="pagehero">
+  <div class="wrap">
+    <span class="eyebrow">De woning</span>
+    <h1>Het huis, kamer voor kamer</h1>
+    <p>Een 300 jaar oud huis op de oude vestigingsmuren van Anduze, opgeknapt met behoud van de oorspronkelijke onderdelen. Loop eerst door de 360°-tour en bekijk daarna de foto's per ruimte.</p>
+    <div class="snelnav">
+      <a class="btn btn-outline" href="#tour">360°-tour</a>
+      <a class="btn btn-outline" href="#indelingen">Indelingen</a>
+      <a class="btn btn-outline" href="#fotos">Foto's</a>
+    </div>
+  </div>
+</header>
+
+<section class="tour-groot" id="tour">
+  <div class="wrap">
+    <div class="tour-embed-groot">
+      <iframe
+        src="https://kuula.co/share/collection/7MzTW?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1"
+        allow="xr-spatial-tracking" allowfullscreen
+        title="360° virtuele tour L'idée est assez">
+      </iframe>
+    </div>
+    <p class="tour-caption">Sleep om rond te kijken en klik op de hotspots om door te lopen. Volledig scherm kan rechtsonder in de tour.</p>
+  </div>
+</section>
+
+<section class="indelingen" id="indelingen">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Indelingen</span>
+      <h2>Het hele huis, of een deel ervan</h2>
+      <p>De woning is op te delen in twee delen, voor 2 en voor 6 personen, of te huren als complete woning voor 8 personen. De kleuren komen overeen met de beschikbaarheidskalender.</p>
+    </div>
+    <div class="indeling-grid">
+      <div class="indeling groot">
+        <div class="label">Appartement</div>
+        <h3>Groot appartement</h3>
+        <p>Voor 6 personen.</p>
+        <!-- Vul hier aan: aantal slaapkamers, badkamer, bijzonderheden -->
+      </div>
+      <div class="indeling klein">
+        <div class="label">Appartement</div>
+        <h3>Klein appartement</h3>
+        <p>Voor 2 personen.</p>
+        <!-- Vul hier aan: bijzonderheden -->
+      </div>
+      <div class="indeling motor">
+        <div class="label">Appartement</div>
+        <h3>Motor appartement</h3>
+        <p><!-- Vul hier aan: capaciteit en omschrijving --></p>
+      </div>
+      <div class="indeling volledig">
+        <div class="label">Complete woning</div>
+        <h3>Volledig huis</h3>
+        <p>Alle delen samen voor 8 personen, inclusief het dakterras met buitenkeuken.</p>
+      </div>
+    </div>
+    <p class="indeling-note">Verhuur gaat per volledige week. Welke delen vrij zijn, zie je in de <a href="index.html#beschikbaarheid" style="color:var(--blue-ink);font-weight:700;">beschikbaarheidskalender</a>.</p>
+  </div>
+</section>
+
+<section id="fotos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Foto's</span>
+      <h2>Een kijkje in de woning</h2>
+      <p>Klik op een foto om 'm groter te bekijken.</p>
+    </div>
+
+    <!--
+      FOTO'S TOEVOEGEN
+      Vervang per vakje de hele <figure class="ph">…</figure> door:
+        <figure><img src="fotos/dakterras-1.jpg" alt="Beschrijving" loading="lazy"><figcaption>Onderschrift</figcaption></figure>
+      Zet de bestanden in een map "fotos" naast dit bestand.
+      Tip: verklein foto's vooraf naar ca. 1600 px breed (JPG/WebP) voor snelle laadtijd.
+      Voeg class="breed" toe aan <figure> voor een grotere foto die twee kolommen beslaat.
+    -->
+
+    <div class="galerij-groep">
+      <h3>Dakterras</h3>
+      <p>Het dakterras met buitenkeuken en uitzicht over de stad en de natuur.</p>
+      <div class="galerij">
+        <figure class="ph breed ph-wrap"><span>Dakterras overzicht</span></figure>
+        <figure class="ph ph-wrap"><span>Buitenkeuken</span></figure>
+        <figure class="ph ph-wrap"><span>Uitzicht</span></figure>
+        <figure class="ph ph-wrap"><span>Dakterras in de avond</span></figure>
+      </div>
+    </div>
+
+    <div class="galerij-groep">
+      <h3>Leefruimtes</h3>
+      <p>Open leefkeuken en zitruimtes met behoud van de oorspronkelijke onderdelen.</p>
+      <div class="galerij">
+        <figure class="ph ph-wrap"><span>Leefkeuken</span></figure>
+        <figure class="ph ph-wrap"><span>Zithoek</span></figure>
+        <figure class="ph ph-wrap"><span>Oorspronkelijke details</span></figure>
+      </div>
+    </div>
+
+    <div class="galerij-groep">
+      <h3>Slaapkamers &amp; badkamers</h3>
+      <p>Drie slaapkamers en twee badkamers, met airco in de slaapkamers.</p>
+      <div class="galerij">
+        <figure class="ph ph-wrap"><span>Slaapkamer 1</span></figure>
+        <figure class="ph ph-wrap"><span>Slaapkamer 2</span></figure>
+        <figure class="ph ph-wrap"><span>Slaapkamer 3</span></figure>
+        <figure class="ph ph-wrap"><span>Badkamer</span></figure>
+      </div>
+    </div>
+
+    <div class="galerij-groep">
+      <h3>Rondom het huis</h3>
+      <p>Twee minuten lopen naar het centrum van Anduze en de Gardon.</p>
+      <div class="galerij">
+        <figure class="ph ph-wrap"><span>Straat / gevel</span></figure>
+        <figure class="ph ph-wrap"><span>Centrum van Anduze</span></figure>
+        <figure class="ph ph-wrap"><span>De Gardon</span></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="terug-cta">
+  <div class="wrap">
+    <h2>Beviel wat je zag?</h2>
+    <p>Bekijk welke weken vrij zijn en stuur ons je aanvraag.</p>
+    <a class="btn btn-primary" href="index.html#beschikbaarheid">Naar beschikbaarheid</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 L'idée est Assez · Anduze, Gard, Frankrijk</div>
+    <div><a href="mailto:info@vakantiewoninganduze.com">info@vakantiewoninganduze.com</a> · <a href="index.html">Terug naar home</a></div>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto vergroot">
+  <button class="lb-btn lb-close" aria-label="Sluiten">×</button>
+  <button class="lb-btn lb-prev" aria-label="Vorige foto">‹</button>
+  <img id="lb-img" alt="">
+  <button class="lb-btn lb-next" aria-label="Volgende foto">›</button>
+  <div class="cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  var imgs = Array.prototype.slice.call(document.querySelectorAll('.galerij figure img'));
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  var i = 0;
+  if(!imgs.length) return;
+
+  function show(n){
+    i = (n + imgs.length) % imgs.length;
+    lbImg.src = imgs[i].currentSrc || imgs[i].src;
+    lbImg.alt = imgs[i].alt;
+    var cap = imgs[i].parentNode.querySelector('figcaption');
+    lbCap.textContent = cap ? cap.textContent : imgs[i].alt;
+  }
+  function open(n){ show(n); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+
+  imgs.forEach(function(img, n){ img.addEventListener('click', function(){ open(n); }); });
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function(){ show(i-1); });
+  lb.querySelector('.lb-next').addEventListener('click', function(){ show(i+1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowLeft') show(i-1);
+    if(e.key === 'ArrowRight') show(i+1);
+  });
+})();
+</script>
+
+</body>
+</html>
