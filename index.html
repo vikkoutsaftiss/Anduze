@@ -177,7 +177,7 @@ section{ padding:84px 0; }
   display:flex; align-items:center; justify-content:space-between;
   font-size:13px; font-weight:700; color:var(--ink-soft); letter-spacing:.04em; text-transform:uppercase;
 }
-.kalender-embed iframe{ width:100%; height:420px; border:0; display:block; }
+.kalender-embed iframe{ width:100%; border:0; display:block; }
 .legenda-groot{ display:flex; gap:22px; padding:16px 20px; flex-wrap:wrap; font-size:14px; color:var(--ink-soft); }
 
 .besch-tekst ul{ list-style:none; margin-top:18px; }
@@ -225,6 +225,20 @@ section{ padding:84px 0; }
   border-bottom:1px dashed var(--beige-line); font-size:15.5px;
 }
 .afstanden li span:last-child{ font-weight:700; color:var(--blue-ink); white-space:nowrap; }
+
+/* ---------- over ons ---------- */
+.over-ons-grid{ display:grid; grid-template-columns:.8fr 1.2fr; gap:48px; align-items:center; }
+@media (max-width:880px){ .over-ons-grid{ grid-template-columns:1fr; } }
+.over-ons-foto{
+  border-radius:var(--radius); overflow:hidden; background:var(--beige-deep);
+  border:1px solid var(--beige-line); aspect-ratio:4/5;
+  box-shadow:0 18px 40px -18px rgba(50,44,34,.28);
+}
+@media (max-width:880px){ .over-ons-foto{ aspect-ratio:4/3; max-width:480px; } }
+.over-ons-foto img{ width:100%; height:100%; object-fit:cover; }
+.over-ons-tekst h2{ font-size:clamp(28px, 3.6vw, 40px); margin:12px 0 16px; }
+.over-ons-tekst p{ color:var(--ink-soft); margin-bottom:14px; max-width:52ch; }
+.over-ons-tekst .namen{ font-family:'Fraunces', serif; font-style:italic; font-size:20px; color:var(--blue-ink); margin-top:18px; }
 
 /* ---------- contact ---------- */
 .contact{ background:#fff; }
@@ -354,14 +368,14 @@ footer a:hover{ text-decoration:underline; }
           vrij/bezet-tijden zichtbaar, geen details.
         -->
           <iframe
-            src="https://calendar.google.com/calendar/embed?ctz=Europe%2FParis&wkst=2&hl=nl&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH&src=742f7d3237ac8902c3a72c0d1f66c610bf04729a03ee1382156d0f1e8e1ea58a%40group.calendar.google.com&color=%2333B679&src=3e75602b9a4a0972edca2efedac6d68c4fcd8c821a1e5f29704d5105b86f1b3a%40group.calendar.google.com&color=%23F6BF26&src=919d35e489827834dc6e7f9b9bd4c3d489216af7a6c086b87c9941572b5720c0%40group.calendar.google.com&color=%23039BE5&src=cd0e08f7e8df5433285c9d4dd92fdd06b36026f92e02bcdd701bdcbfd83fa542%40group.calendar.google.com&color=%23D50000"
-            title="Beschikbaarheidskalender L'idée est assez"
-            style="border: 0;"
-            width="100%"
-            height="600"
-            frameborder="0"
-            scrolling="no">
-          </iframe>
+          src="https://calendar.google.com/calendar/embed?ctz=Europe%2FParis&wkst=2&hl=nl&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH&src=742f7d3237ac8902c3a72c0d1f66c610bf04729a03ee1382156d0f1e8e1ea58a%40group.calendar.google.com&color=%2333B679&src=3e75602b9a4a0972edca2efedac6d68c4fcd8c821a1e5f29704d5105b86f1b3a%40group.calendar.google.com&color=%23F6BF26&src=919d35e489827834dc6e7f9b9bd4c3d489216af7a6c086b87c9941572b5720c0%40group.calendar.google.com&color=%23039BE5&src=cd0e08f7e8df5433285c9d4dd92fdd06b36026f92e02bcdd701bdcbfd83fa542%40group.calendar.google.com&color=%23D50000"
+          title="Beschikbaarheidskalender L'idée est assez"
+          style="border:0;"
+          width="100%"
+          height="820"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
         <div class="legenda-groot" style="display: flex; flex-wrap: wrap; gap: 15px;">
           <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:#33B679;margin-right:6px;"></i>Groot appartement</span>
           <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:#F6BF26;margin-right:6px;"></i>Klein appartement</span>
@@ -461,6 +475,23 @@ footer a:hover{ text-decoration:underline; }
           <li><span>Middellandse Zee (Le Grau-du-Roi)</span><span>1 u 15</span></li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="over-ons">
+  <div class="wrap over-ons-grid">
+    <div class="over-ons-foto">
+      <!-- Zet de foto in de map "fotos" en pas de bestandsnaam aan -->
+      <img src="fotos/gastheren.jpg" alt="[Naam] en [Naam], de eigenaren van L'idée est assez" loading="lazy">
+    </div>
+    <div class="over-ons-tekst">
+      <span class="eyebrow">Over ons</span>
+      <h2>Welkom bij L'idée est assez</h2>
+      <p>[Vertel in twee of drie zinnen hoe jullie bij Anduze en dit huis terecht zijn gekomen.]</p>
+      <p>[Wat vinden jullie zelf het mooiste aan het huis of de omgeving? Een persoonlijke favoriet werkt beter dan een algemene lof.]</p>
+      <p>[Eén zin over wat gasten van jullie kunnen verwachten, bijvoorbeeld dat jullie altijd tips voor de omgeving hebben.]</p>
+      <div class="namen">Riny &amp; René</div>
     </div>
   </div>
 </section>
